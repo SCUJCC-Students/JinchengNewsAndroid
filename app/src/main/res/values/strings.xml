@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">JinchengNewsAndroid</string>
+    <string name="app_name">锦城头条</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">打开 navigation drawer</string>
+    <string name="navigation_drawer_close">关闭 navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">设置</string>
 </resources>
