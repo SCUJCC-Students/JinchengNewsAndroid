@@ -4,6 +4,9 @@
     <string name="navigation_drawer_open">打开 navigation drawer</string>
     <string name="navigation_drawer_close">关闭 navigation drawer</string>
 
+    <string name="username">用户名</string>
+    <string name="user_signature">用户签名</string>
+
     <string name="action_settings">设置</string>
 
     <!-- TODO: Remove or change this placeholder text -->
