@@ -12,10 +12,10 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment2 extends Fragment {
+public class TabFragment3 extends Fragment {
 
 
-    public TabFragment2() {
+    public TabFragment3() {
         // Required empty public constructor
     }
 
@@ -24,12 +24,12 @@ public class TabFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
-        inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.fragment_2_text);
-        textView.setText("测试文本，锦城头条，社团页");
+        View view =inflater.inflate(R.layout.fragment_tab_fragment3, container, false);
+        inflater.inflate(R.layout.fragment_tab_fragment3, container, false);
+        TextView textView = (TextView) view.findViewById(R.id.fragment_3_text);
+        textView.setText("测试文本，锦城头条，活动页");
 
-        return inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
+        return inflater.inflate(R.layout.fragment_tab_fragment3, container, false);
     }
 
 }

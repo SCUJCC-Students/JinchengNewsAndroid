@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity
         fragmentList =new ArrayList<>();
         fragmentList.add(tabFragment);
         fragmentList.add(new TabFragment2());
+        fragmentList.add(new TabFragment3());
         pager.setAdapter(new TabAdapter(getSupportFragmentManager(),fragmentList));
 
         /*Tab与ViewPager绑定*/
