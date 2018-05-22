@@ -1,3 +1,11 @@
+/*
+ author 郑维一
+
+ File：MainActivity.java
+ Description：Main activity
+ Site：www.zhengweiyi.cn
+ */
+
 package cn.zhengweiyi.jinchengnewsandroid;
 
 import android.os.Bundle;

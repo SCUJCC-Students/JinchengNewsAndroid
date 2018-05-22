@@ -1,3 +1,11 @@
+/*
+ author 郑维一
+
+ File：TabFragment3.java
+ Description：The Fragment for third Tab
+ Site：www.zhengweiyi.cn
+ */
+
 package cn.zhengweiyi.jinchengnewsandroid;
 
 

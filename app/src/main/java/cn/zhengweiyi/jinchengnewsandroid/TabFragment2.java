@@ -1,5 +1,12 @@
-package cn.zhengweiyi.jinchengnewsandroid;
+/*
+ author 郑维一
 
+ File：TabFragment2.java
+ Description：The Fragment for second Tab
+ Site：www.zhengweiyi.cn
+ */
+
+package cn.zhengweiyi.jinchengnewsandroid;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

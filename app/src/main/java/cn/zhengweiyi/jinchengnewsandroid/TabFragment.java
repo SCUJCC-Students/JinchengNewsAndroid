@@ -1,5 +1,12 @@
-package cn.zhengweiyi.jinchengnewsandroid;
+/*
+ author 郑维一
 
+ File：TabFragment.java
+ Description：The Fragment for first Tab
+ Site：www.zhengweiyi.cn
+ */
+
+package cn.zhengweiyi.jinchengnewsandroid;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,14 +22,13 @@ public class TabFragment extends Fragment {
 
     }
 
-    /*public static TabFragment newInstance(String text){
-        Bundle bundle = new Bundle();
-        bundle.putString("text",text);
-        TabFragment tabFragment = new TabFragment();
-        tabFragment.setArguments(bundle);
-        return  tabFragment;
-    }*/
-
+    /**
+     *
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return view
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
