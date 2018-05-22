@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDefault">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDefault"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/newsType1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="1dp">
+
+            <TextView
+                android:id="@+id/newsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/news_title"
+                android:textSize="@dimen/news_text_title"
+                android:textColor="@color/colorBlackPrimary"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@id/newsImage"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/newsAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/news_author"
+                android:textColor="@color/colorBlackLight"
+                android:textSize="@dimen/news_text_description"
+                android:layout_below="@id/newsTitle"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/newsReader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/news_reader"
+                android:textColor="@color/colorBlackLight"
+                android:textSize="@dimen/news_text_description"
+                android:layout_below="@id/newsTitle"
+                android:layout_toEndOf="@id/newsAuthor"/>
+
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="96dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="4dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/news_pic_description"
+                android:src="@drawable/ic_pic_blank"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
