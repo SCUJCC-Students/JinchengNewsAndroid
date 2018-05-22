@@ -6,7 +6,7 @@
 
     <string name="news_title">新闻标题,大概二十个字左右比较合适</string>
     <string name="news_author">作者/发布账号</string>
-    <string name="news_views">00阅读</string>
+    <string name="news_views">%1$d阅读</string>
     <string name="news_pic_description">新闻图片</string>
 
     <string name="username">用户名</string>
