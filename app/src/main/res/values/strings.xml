@@ -4,6 +4,11 @@
     <string name="navigation_drawer_open">打开 navigation drawer</string>
     <string name="navigation_drawer_close">关闭 navigation drawer</string>
 
+    <string name="news_title">新闻标题,大概二十个字左右比较合适</string>
+    <string name="news_author">作者/发布账号</string>
+    <string name="news_reader">00阅读</string>
+    <string name="news_pic_description">新闻图片</string>
+
     <string name="username">用户名</string>
     <string name="user_signature">用户签名</string>
 

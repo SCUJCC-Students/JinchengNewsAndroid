@@ -28,8 +28,6 @@ public class TabFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_tab, container, false);
         inflater.inflate(R.layout.fragment_tab, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.pager_text);
-        textView.setText("测试文本，锦城头条");
 
         return view;
     }
