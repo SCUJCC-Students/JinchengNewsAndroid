@@ -44,11 +44,11 @@
                 android:gravity="start"/>
 
             <TextView
-                android:id="@+id/newsReader"
+                android:id="@+id/newsViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/news_reader"
+                android:text="@string/news_views"
                 android:textColor="@color/colorBlackLight"
                 android:textSize="@dimen/news_text_description"
                 android:layout_below="@id/newsTitle"
