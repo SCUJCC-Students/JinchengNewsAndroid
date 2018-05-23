@@ -33,8 +33,6 @@ public class TabFragment2 extends Fragment {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
         inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.fragment_2_text);
-        textView.setText("测试文本，锦城头条，社团页");
 
         return inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
     }
