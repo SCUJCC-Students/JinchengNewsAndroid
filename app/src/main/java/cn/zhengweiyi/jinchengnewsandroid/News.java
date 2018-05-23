@@ -12,7 +12,7 @@ public class News {
     private String title;       //标题
     private String content;     //内容
     private String author;      //作者
-    private String views;       //浏览量
+    private int views;       //浏览量
 
     /**
      * 新闻标题
@@ -40,10 +40,10 @@ public class News {
      * 新闻浏览量
      * @return 返回新闻浏览量
      */
-    public String getViews() {
+    public int getViews() {
         return views;
     }
-    public void setViews(String views ) {
+    public void setViews(int views ) {
         this.views = views;
     }
 

@@ -15,6 +15,7 @@ import java.util.List;
 
 public class NewsListAdapter extends ArrayAdapter<News> {
     private int resourecId;
+    public Context context;
 
     public NewsListAdapter(Context context, int resource, List<News> objects) {
         super( context, resource, objects);
@@ -27,6 +28,8 @@ public class NewsListAdapter extends ArrayAdapter<News> {
         /* return super.getView(position, convertView, parent); */
         News news = getItem( position);
         View view;
+        context =getContext();
+
         if (news!=null) {
 
             if (convertView == null) {
@@ -43,11 +46,15 @@ public class NewsListAdapter extends ArrayAdapter<News> {
             //设置新闻浏览量
             // TODO move getResources() to Activity
             TextView newViewsText = (TextView) view.findViewById(R.id.newsViews);
-            String t = String.format(getResources().getString(R.string.news_views), news.getViews());
+            String t = String.format(context.getString(R.string.news_views), news.getViews());
             newViewsText.setText(t);
             //设置新闻图片
             ImageView newImageSrc = (ImageView) view.findViewById(R.id.newsImage);
+
+            return view;
         }
-        return view;
+
+        //如果
+    return null;
     }
 }
