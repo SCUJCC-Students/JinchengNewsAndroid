@@ -64,11 +64,6 @@ public class MainActivity extends AppCompatActivity
         tab.setupWithViewPager(pager);
     }
 
-    /*初始化Tab标签数据*/
-    /*private void initData() {
-        list = new ArrayList<>();
-    }*/
-
     /*初始化界面*/
     private void initViews() {
         this.pager = (ViewPager) findViewById(R.id.pager);
@@ -85,6 +80,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * 创建右上角菜单按钮
+     * @param menu 菜单
+     * @return 返回布尔值
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * 选中右上角菜单选项
+     * @param item 菜单选项
+     * @return 返回布尔值
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -107,6 +112,11 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 左滑菜单
+     * @param item 菜单项
+     * @return 返回布尔值
+     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
