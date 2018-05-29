@@ -25,7 +25,6 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class TabFragment2 extends Fragment implements AdapterView.OnItemClickListener {
-    private ListView newsTitleListView;
     private List<News> newsList;
     private NewsListAdapter adapter;
     // private boolean isTwoPane;
@@ -44,7 +43,7 @@ public class TabFragment2 extends Fragment implements AdapterView.OnItemClickLis
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         View view = inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
-        newsTitleListView = view.findViewById(R.id.tab_fragment2_list_view);
+        ListView newsTitleListView = view.findViewById(R.id.tab_fragment2_list_view);
         newsTitleListView.setAdapter(adapter);
         newsTitleListView.setOnItemClickListener(this);
         return view;
@@ -71,7 +70,7 @@ public class TabFragment2 extends Fragment implements AdapterView.OnItemClickLis
      */
     private List<News> getNews() {
         // TODO Auto-generated method stub
-        List<News> newsList1 = new ArrayList<News>();
+        List<News> newsList1 = new ArrayList<>();
         News new1 = new News();
         News new2 = new News();
         new1.setTitle("再不睡觉就要死了！熬最长的夜，住最贵的ICU");
