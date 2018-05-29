@@ -36,6 +36,7 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/newsImage"
                 android:gravity="start"/>
 

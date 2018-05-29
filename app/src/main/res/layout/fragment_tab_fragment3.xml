@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".TabFragment3">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/fragment_3_text"
+    <ListView
+        android:id="@+id/tab_fragment3_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:divider="@color/colorDefault"
+        android:dividerHeight="1dp">
+    </ListView>
 
 </FrameLayout>
