@@ -2,6 +2,7 @@
 
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDefault">
@@ -9,8 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorDefault"
-        android:orientation="vertical">
+        android:background="@color/colorWhite"
+        android:paddingStart="@dimen/list_padding"
+        android:paddingEnd="@dimen/list_padding"
+        android:orientation="vertical"
+        tools:ignore="RtlSymmetry">
 
         <RelativeLayout
             android:id="@+id/newsType1"
@@ -19,7 +23,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
             android:background="@color/colorWhite"
-            android:layout_marginBottom="1dp">
+            >
 
             <TextView
                 android:id="@+id/newsTitle"
@@ -27,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="@string/news_title"
-                android:textSize="@dimen/news_text_title"
+                android:textSize="@dimen/news_text_title_size"
                 android:textColor="@color/colorBlackPrimary"
                 android:layout_alignParentTop="true"
                 android:layout_toStartOf="@id/newsImage"
@@ -39,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/news_author"
                 android:textColor="@color/colorBlackLight"
-                android:textSize="@dimen/news_text_description"
+                android:textSize="@dimen/news_text_description_size"
                 android:layout_below="@id/newsTitle"
                 android:gravity="start"/>
 
@@ -50,7 +54,7 @@
                 android:layout_marginStart="8dp"
                 android:text="@string/news_views"
                 android:textColor="@color/colorBlackLight"
-                android:textSize="@dimen/news_text_description"
+                android:textSize="@dimen/news_text_description_size"
                 android:layout_below="@id/newsTitle"
                 android:layout_toEndOf="@id/newsAuthor"/>
 
