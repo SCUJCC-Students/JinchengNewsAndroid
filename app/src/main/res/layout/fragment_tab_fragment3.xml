@@ -9,7 +9,7 @@
         android:id="@+id/tab_fragment3_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/colorDefault"
+        android:divider="@drawable/list_divider_line"
         android:dividerHeight="1dp">
     </ListView>
 
