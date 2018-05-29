@@ -24,7 +24,7 @@ public class NewsListFragment extends Fragment implements AdapterView.OnItemClic
     private ListView newsTitleListView;
     private List<News> newsList;
     private NewsListAdapter adapter;
-    private boolean isTwoPane;
+    // private boolean isTwoPane;
 
     @Override
     public void onAttach(Activity activity) {
@@ -40,7 +40,7 @@ public class NewsListFragment extends Fragment implements AdapterView.OnItemClic
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         View view= inflater.inflate(R.layout. fragment_tab_fragment2, container, false);
-        newsTitleListView=(ListView) view.findViewById(R.id. tab_fragment2_list_view);
+        newsTitleListView= view.findViewById(R.id. tab_fragment2_list_view);
         newsTitleListView.setAdapter( adapter);
         newsTitleListView.setOnItemClickListener( this);
         return view;
