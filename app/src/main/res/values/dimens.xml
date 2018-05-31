@@ -9,4 +9,8 @@
     <dimen name="tab_height">36dp</dimen>
     <dimen name="news_text_title">18sp</dimen>
     <dimen name="news_text_description">12sp</dimen>
+
+    <dimen name="login_ad_text_size">24sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>
