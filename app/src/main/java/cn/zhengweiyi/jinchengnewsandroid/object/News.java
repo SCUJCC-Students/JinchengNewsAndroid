@@ -19,7 +19,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class News {
-    @Id
+    @Id(autoincrement = true)
     private long id;            //id
     private String title;       //标题
     private String content;     //内容
