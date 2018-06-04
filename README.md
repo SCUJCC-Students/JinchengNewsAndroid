@@ -8,7 +8,8 @@
 
 ## 关键点
 * Fragment
-* TabLayout
+* TabLayout + ViewPager
+* [GreenDAO](https://github.com/greenrobot/greenDAO)
 
 ## 来找我呀
 个人网站：<http://www.zhengweiyi.cn>  
