@@ -20,6 +20,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.object.News;
+
 
 /**
  * A simple {@link Fragment} subclass.

@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.object.News;
+
 public class NewsListAdapter extends ArrayAdapter<News> {
     private int resourceId;
 

@@ -20,6 +20,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.object.News;
+
 public class NewsListFragment extends Fragment implements AdapterView.OnItemClickListener {
     private ListView newsTitleListView;
     private List<News> newsList;
