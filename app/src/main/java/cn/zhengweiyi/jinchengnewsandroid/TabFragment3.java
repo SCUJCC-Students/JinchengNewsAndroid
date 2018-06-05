@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
+import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 
 /**
@@ -36,8 +37,9 @@ public class TabFragment3 extends Fragment implements AdapterView.OnItemClickLis
     public void onAttach(Activity activity) {
         // TODO Auto-generated method stub
         super.onAttach(activity);
-        // 初始化数据
-        newsList = getNews();
+        MyApplication app = (MyApplication) getActivity().getApplication();
+        NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
+        newsList = newsLab.getNewsByCat(2L);
         adapter = new NewsListAdapter(activity, R.layout.news_title_item_pic_1, newsList);
     }
 
@@ -66,27 +68,6 @@ public class TabFragment3 extends Fragment implements AdapterView.OnItemClickLis
             isTwoPane= false;
         }
         */
-    }
-
-    /*
-     * 初始化数据
-     */
-    private List<News> getNews() {
-        // TODO Auto-generated method stub
-        List<News> newsList1 = new ArrayList<>();
-        News new1 = new News();
-        News new2 = new News();
-        new1.setTitle("7号文件：欢迎联邦合众国教育部李部长莅临视察");
-        new1.setContent("这是机密这是机密这是机密这是机密这是机密这是机密这是机密这是机密这是机密这是机密这是机密");
-        new1.setAuthor("众声话剧社");
-        new1.setViews(64);
-        new2.setTitle("2018年四川省高校国旗护卫队联盟会操暨锦城国旗护卫队十周年庆典在我校举行");
-        new2.setContent("锦城国旗护卫队讯 2018年5月26日，2018年四川省高校国旗护卫队联盟会操暨锦城国旗护卫队十周年庆典在我校第一运动场举行，来自四川省27所高校国旗护卫队、国旗班、仪仗队的战友们齐聚锦城。");
-        new2.setAuthor("锦城国旗护卫队");
-        new2.setViews(2387);
-        newsList1.add(new1);
-        newsList1.add(new2);
-        return newsList1;
     }
 
     @Override

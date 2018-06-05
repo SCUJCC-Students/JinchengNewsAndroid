@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
+import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 
 /**
@@ -35,8 +36,9 @@ public class TabFragment2 extends Fragment implements AdapterView.OnItemClickLis
     public void onAttach(Activity activity) {
         // TODO Auto-generated method stub
         super.onAttach(activity);
-        // 初始化数据
-        newsList = getNews();
+        MyApplication app = (MyApplication) getActivity().getApplication();
+        NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
+        newsList = newsLab.getNewsByCat(1L);
         adapter = new NewsListAdapter(activity, R.layout.news_title_item_pic_1, newsList);
     }
 
@@ -65,27 +67,6 @@ public class TabFragment2 extends Fragment implements AdapterView.OnItemClickLis
             isTwoPane= false;
         }
         */
-    }
-
-    /*
-     * 初始化数据
-     */
-    private List<News> getNews() {
-        // TODO Auto-generated method stub
-        List<News> newsList1 = new ArrayList<>();
-        News new1 = new News();
-        News new2 = new News();
-        new1.setTitle("极限社发了一条消息,");
-        new1.setContent("极限社极限社极限社极限社极限社极限社极限社极限社极限社");
-        new1.setAuthor("极限社");
-        new1.setViews(0);
-        new2.setTitle("动漫社过来蹭一下热度");
-        new2.setContent("动漫社");
-        new2.setAuthor("动漫社");
-        new2.setViews(2);
-        newsList1.add(new1);
-        newsList1.add(new2);
-        return newsList1;
     }
 
     @Override

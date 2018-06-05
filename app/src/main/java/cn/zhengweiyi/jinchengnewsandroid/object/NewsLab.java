@@ -17,8 +17,8 @@ public class NewsLab {
         return newsDao.loadAll();
     }
 
-    public  List<News> getNewsByCat(int catid) {
-        return newsDao.queryBuilder().where(NewsDao.Properties.CategoryId.eq(catid))
+    public  List<News> getNewsByCat(Long catId) {
+        return newsDao.queryBuilder().where(NewsDao.Properties.CategoryId.eq(catId))
                 .list();
     }
 }
