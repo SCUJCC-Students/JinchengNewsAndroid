@@ -13,7 +13,8 @@
     <string name="user_signature">用户签名</string>
 
     <string name="action_settings">设置</string>
-    <string name="title_activity_scrolling_content">ScrollingContentActivity</string>
+    <string name="title_activity_scrolling_content">新闻详情</string>
+    <string name="title_activity_content1">登录锦城头条，了解你的身边事</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -103,5 +104,23 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_login">免密登录</string>
 
+    <!-- Strings related to login -->
+    <string name="prompt_phone">手机号</string>
+    <string name="prompt_password">请输入验证码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">免密登录</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="prompt_1">点击阅读“用户协议”和“隐私政策”</string>
+    <string name="prompt_2">账号注册 | 密码登录</string>
+    <string name="prompt_3">登录锦城头条，了解你的身边事</string>
+    <string name="prompt_password2">密码登录</string>
+    <string name="title_activity_login_two3">请输入密码</string>
 </resources>

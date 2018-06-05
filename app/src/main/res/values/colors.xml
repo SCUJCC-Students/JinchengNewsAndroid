@@ -7,4 +7,8 @@
     <color name="colorWhite">#FFF</color>
     <color name="colorBlackPrimary">#333</color>
     <color name="colorBlackLight">#999</color>
+    <color name="colorlogin">#C73530</color>
+    <color name="colortext">#000000</color>
+    <color name="colorbackground">#C73530</color>
+    <color name="color1">#FFF</color>
 </resources>
