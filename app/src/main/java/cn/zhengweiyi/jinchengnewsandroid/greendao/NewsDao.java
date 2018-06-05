@@ -1,13 +1,18 @@
 package cn.zhengweiyi.jinchengnewsandroid.greendao;
 
+import java.util.List;
+import java.util.ArrayList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
 
 import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.Property;
+import org.greenrobot.greendao.internal.SqlUtils;
 import org.greenrobot.greendao.internal.DaoConfig;
 import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.database.DatabaseStatement;
+
+import cn.zhengweiyi.jinchengnewsandroid.object.Category;
 
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
 
@@ -24,16 +29,18 @@ public class NewsDao extends AbstractDao<News, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property Id = new Property(0, long.class, "id", true, "_id");
+        public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Title = new Property(1, String.class, "title", false, "TITLE");
         public final static Property Content = new Property(2, String.class, "content", false, "CONTENT");
         public final static Property Author = new Property(3, String.class, "author", false, "AUTHOR");
         public final static Property ReleaseTime = new Property(4, java.util.Date.class, "releaseTime", false, "RELEASE_TIME");
         public final static Property UpdataTime = new Property(5, java.util.Date.class, "updataTime", false, "UPDATA_TIME");
         public final static Property Keywords = new Property(6, String.class, "keywords", false, "KEYWORDS");
-        public final static Property CategoryId = new Property(7, int.class, "categoryId", false, "CATEGORY_ID");
+        public final static Property CategoryId = new Property(7, Long.class, "categoryId", false, "CATEGORY_ID");
         public final static Property Views = new Property(8, int.class, "views", false, "VIEWS");
     }
+
+    private DaoSession daoSession;
 
 
     public NewsDao(DaoConfig config) {
@@ -42,20 +49,21 @@ public class NewsDao extends AbstractDao<News, Long> {
     
     public NewsDao(DaoConfig config, DaoSession daoSession) {
         super(config, daoSession);
+        this.daoSession = daoSession;
     }
 
     /** Creates the underlying database table. */
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"NEWS\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY NOT NULL ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"TITLE\" TEXT," + // 1: title
                 "\"CONTENT\" TEXT," + // 2: content
                 "\"AUTHOR\" TEXT," + // 3: author
                 "\"RELEASE_TIME\" INTEGER," + // 4: releaseTime
                 "\"UPDATA_TIME\" INTEGER," + // 5: updataTime
                 "\"KEYWORDS\" TEXT," + // 6: keywords
-                "\"CATEGORY_ID\" INTEGER NOT NULL ," + // 7: categoryId
+                "\"CATEGORY_ID\" INTEGER," + // 7: categoryId
                 "\"VIEWS\" INTEGER NOT NULL );"); // 8: views
     }
 
@@ -68,7 +76,11 @@ public class NewsDao extends AbstractDao<News, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, News entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
  
         String title = entity.getTitle();
         if (title != null) {
@@ -99,14 +111,22 @@ public class NewsDao extends AbstractDao<News, Long> {
         if (keywords != null) {
             stmt.bindString(7, keywords);
         }
-        stmt.bindLong(8, entity.getCategoryId());
+ 
+        Long categoryId = entity.getCategoryId();
+        if (categoryId != null) {
+            stmt.bindLong(8, categoryId);
+        }
         stmt.bindLong(9, entity.getViews());
     }
 
     @Override
     protected final void bindValues(SQLiteStatement stmt, News entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
  
         String title = entity.getTitle();
         if (title != null) {
@@ -137,26 +157,36 @@ public class NewsDao extends AbstractDao<News, Long> {
         if (keywords != null) {
             stmt.bindString(7, keywords);
         }
-        stmt.bindLong(8, entity.getCategoryId());
+ 
+        Long categoryId = entity.getCategoryId();
+        if (categoryId != null) {
+            stmt.bindLong(8, categoryId);
+        }
         stmt.bindLong(9, entity.getViews());
     }
 
     @Override
+    protected final void attachEntity(News entity) {
+        super.attachEntity(entity);
+        entity.__setDaoSession(daoSession);
+    }
+
+    @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }    
 
     @Override
     public News readEntity(Cursor cursor, int offset) {
         News entity = new News( //
-            cursor.getLong(offset + 0), // id
+            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // title
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // content
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // author
             cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)), // releaseTime
             cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)), // updataTime
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // keywords
-            cursor.getInt(offset + 7), // categoryId
+            cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7), // categoryId
             cursor.getInt(offset + 8) // views
         );
         return entity;
@@ -164,14 +194,14 @@ public class NewsDao extends AbstractDao<News, Long> {
      
     @Override
     public void readEntity(Cursor cursor, News entity, int offset) {
-        entity.setId(cursor.getLong(offset + 0));
+        entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setTitle(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setContent(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setAuthor(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setReleaseTime(cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)));
         entity.setUpdataTime(cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)));
         entity.setKeywords(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
-        entity.setCategoryId(cursor.getInt(offset + 7));
+        entity.setCategoryId(cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7));
         entity.setViews(cursor.getInt(offset + 8));
      }
     
@@ -192,7 +222,7 @@ public class NewsDao extends AbstractDao<News, Long> {
 
     @Override
     public boolean hasKey(News entity) {
-        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
+        return entity.getId() != null;
     }
 
     @Override
@@ -200,4 +230,95 @@ public class NewsDao extends AbstractDao<News, Long> {
         return true;
     }
     
+    private String selectDeep;
+
+    protected String getSelectDeep() {
+        if (selectDeep == null) {
+            StringBuilder builder = new StringBuilder("SELECT ");
+            SqlUtils.appendColumns(builder, "T", getAllColumns());
+            builder.append(',');
+            SqlUtils.appendColumns(builder, "T0", daoSession.getCategoryDao().getAllColumns());
+            builder.append(" FROM NEWS T");
+            builder.append(" LEFT JOIN CATEGORY T0 ON T.\"CATEGORY_ID\"=T0.\"_id\"");
+            builder.append(' ');
+            selectDeep = builder.toString();
+        }
+        return selectDeep;
+    }
+    
+    protected News loadCurrentDeep(Cursor cursor, boolean lock) {
+        News entity = loadCurrent(cursor, 0, lock);
+        int offset = getAllColumns().length;
+
+        Category category = loadCurrentOther(daoSession.getCategoryDao(), cursor, offset);
+        entity.setCategory(category);
+
+        return entity;    
+    }
+
+    public News loadDeep(Long key) {
+        assertSinglePk();
+        if (key == null) {
+            return null;
+        }
+
+        StringBuilder builder = new StringBuilder(getSelectDeep());
+        builder.append("WHERE ");
+        SqlUtils.appendColumnsEqValue(builder, "T", getPkColumns());
+        String sql = builder.toString();
+        
+        String[] keyArray = new String[] { key.toString() };
+        Cursor cursor = db.rawQuery(sql, keyArray);
+        
+        try {
+            boolean available = cursor.moveToFirst();
+            if (!available) {
+                return null;
+            } else if (!cursor.isLast()) {
+                throw new IllegalStateException("Expected unique result, but count was " + cursor.getCount());
+            }
+            return loadCurrentDeep(cursor, true);
+        } finally {
+            cursor.close();
+        }
+    }
+    
+    /** Reads all available rows from the given cursor and returns a list of new ImageTO objects. */
+    public List<News> loadAllDeepFromCursor(Cursor cursor) {
+        int count = cursor.getCount();
+        List<News> list = new ArrayList<News>(count);
+        
+        if (cursor.moveToFirst()) {
+            if (identityScope != null) {
+                identityScope.lock();
+                identityScope.reserveRoom(count);
+            }
+            try {
+                do {
+                    list.add(loadCurrentDeep(cursor, false));
+                } while (cursor.moveToNext());
+            } finally {
+                if (identityScope != null) {
+                    identityScope.unlock();
+                }
+            }
+        }
+        return list;
+    }
+    
+    protected List<News> loadDeepAllAndCloseCursor(Cursor cursor) {
+        try {
+            return loadAllDeepFromCursor(cursor);
+        } finally {
+            cursor.close();
+        }
+    }
+    
+
+    /** A raw-style query where you can pass any WHERE clause and arguments. */
+    public List<News> queryDeep(String where, String... selectionArg) {
+        Cursor cursor = db.rawQuery(getSelectDeep() + where, selectionArg);
+        return loadDeepAllAndCloseCursor(cursor);
+    }
+ 
 }

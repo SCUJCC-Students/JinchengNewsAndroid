@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         /*初始化界面*/
+        MyApplication app = (MyApplication) getApplication();
+        app.initData();
+        // TODO 访问网络
         initViews();
         /*初始化数据*/
         //initData();

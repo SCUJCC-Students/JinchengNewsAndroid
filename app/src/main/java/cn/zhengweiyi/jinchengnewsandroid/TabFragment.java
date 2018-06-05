@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
+import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 public class TabFragment extends Fragment implements AdapterView.OnItemClickListener {
     private List<News> newsList;
@@ -32,7 +33,10 @@ public class TabFragment extends Fragment implements AdapterView.OnItemClickList
         // TODO Auto-generated method stub
         super.onAttach(activity);
         // 初始化数据
-        newsList = getNews();
+//        newsList = getNews();
+        MyApplication app = (MyApplication) getActivity().getApplication();
+        NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
+        newsList = newsLab.getNews();
         adapter = new NewsListAdapter(activity, R.layout.news_title_item_pic_1, newsList);
     }
 
