@@ -13,9 +13,10 @@
 
     <!-- Login progress -->
     <TextView
+        android:id="@+id/prompt_title"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/prompt_3"
+    android:text="@string/prompt_title"
     android:textColor="@color/colortext"
     android:textSize="@dimen/text_size1"/>
 
@@ -62,7 +63,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password2"
+                    android:hint="@string/password_to_login"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/title_activity_login_two3"
                     android:imeOptions="actionUnspecified"
@@ -73,28 +74,30 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/prompt_loginprompt_login"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorbackground"
-                android:text="@string/action_sign_in"
+                android:text="@string/prompt_login"
                 android:textColor="@color/color1"
                 android:textStyle="bold"></Button>
 
             <TextView
+                android:id="@+id/uesr_agreement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:lines="3"
-                android:text="@string/prompt_1" />
+                android:text="@string/uesr_agreement" />
 
             <TextView
+                android:id="@+id/account_registration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/prompt_2" />
+                android:text="@string/account_registration" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

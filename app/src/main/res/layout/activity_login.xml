@@ -11,9 +11,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
     <TextView
+        android:id="@+id/prompt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prompt_3"
+        android:text="@string/prompt_title"
         android:textColor="@color/colortext"
         android:textSize="@dimen/text_size1"/>
 
@@ -57,12 +58,12 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/verification_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
+                    android:hint="@string/verification_code"
                     android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeActionLabel="@string/avoid_close_login"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -77,22 +78,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorbackground"
-                android:text="@string/action_sign_in"
+                android:text="@string/prompt_login"
                 android:textColor="@color/color1"
                 android:textStyle="bold"></Button>
 
             <TextView
+                android:id="@+id/uesr_agreement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:lines="3"
-                android:text="@string/prompt_1" />
+                android:text="@string/uesr_agreement" />
 
             <TextView
+                android:id="@+id/account_registration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/prompt_2" />
+                android:text="@string/account_registration" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
