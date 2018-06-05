@@ -17,6 +17,7 @@ public class Category {
     @Id
     private Long id;        //类别ID
     private String name;    //类名
+
     @Generated(hash = 1003047676)
     public Category(Long id, String name) {
         this.id = id;

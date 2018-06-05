@@ -37,6 +37,7 @@ public class News {
     @ToOne(joinProperty = "categoryId")
     private Category category;  //关系表
     private int views;          //浏览量
+
     /** Used to resolve relations */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
