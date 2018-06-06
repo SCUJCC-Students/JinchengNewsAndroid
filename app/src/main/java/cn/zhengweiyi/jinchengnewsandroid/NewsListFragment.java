@@ -32,8 +32,6 @@ public class NewsListFragment extends Fragment implements AdapterView.OnItemClic
     public void onAttach(Activity activity) {
         // TODO Auto-generated method stub
         super.onAttach( activity);
-        // 初始化数据
-        newsList = getNews();
         adapter=new NewsListAdapter( activity, R.layout. news_title_item_pic_1, newsList);
     }
 
@@ -61,27 +59,6 @@ public class NewsListFragment extends Fragment implements AdapterView.OnItemClic
             isTwoPane= false;
         }
         */
-    }
-
-    /*
-     * 初始化数据
-     */
-    private List<News> getNews() {
-        // TODO Auto-generated method stub
-        List<News> newsList1 = new ArrayList<News>();
-        News new1 = new News();
-        News new2 = new News();
-        new1.setTitle( "再不睡觉就要死了！熬最长的夜，住最贵的ICU");
-        new1.setContent( "说真的，好久没有好好睡个觉了。现在熬夜和面膜都不配了，最配的都变成ICU了。锦城猪健文日了解一下？" );
-        new1.setAuthor("郑维一");
-        new1.setViews(526);
-        new2.setTitle( "2018年四川省高校国旗护卫队联盟会操暨锦城国旗护卫队十周年庆典在我校举行");
-        new2.setContent( "锦城国旗护卫队讯 2018年5月26日，2018年四川省高校国旗护卫队联盟会操暨锦城国旗护卫队十周年庆典在我校第一运动场举行，来自四川省27所高校国旗护卫队、国旗班、仪仗队的战友们齐聚锦城。" );
-        new2.setAuthor("锦城国旗护卫队");
-        new2.setViews(0);
-        newsList1.add( new1);
-        newsList1.add( new2);
-        return newsList1;
     }
 
     @Override

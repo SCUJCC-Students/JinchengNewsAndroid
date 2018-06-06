@@ -32,11 +32,12 @@ public class TabFragment extends Fragment implements AdapterView.OnItemClickList
     public void onAttach(Activity activity) {
         // TODO Auto-generated method stub
         super.onAttach(activity);
-        // 初始化数据
-//        newsList = getNews();
+        //获取Application
         MyApplication app = (MyApplication) getActivity().getApplication();
+        //读取新闻
         NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
         newsList = newsLab.getNewsByCat(0L);
+        //显示新闻列表
         adapter = new NewsListAdapter(activity, R.layout.news_title_item_pic_1, newsList);
     }
 

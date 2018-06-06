@@ -2,7 +2,7 @@
  author 郑维一
 
  File：MyApplication.java
- Description：News Class
+ Description：custom Application class
  Site：www.zhengweiyi.cn
  */
 
@@ -10,7 +10,6 @@ package cn.zhengweiyi.jinchengnewsandroid;
 
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,7 +43,7 @@ public class MyApplication extends Application {
     }
 
     /**
-     * 设置greenDao
+     * 设置 GreenDao
      */
     private void setDatabase() {
         // 通过 DaoMaster 的内部类 DevOpenHelper，你可以得到一个便利的 SQLiteOpenHelper 对象。
@@ -65,6 +64,7 @@ public class MyApplication extends Application {
 
     /**
      * 初始化数据
+     * TODO 实现服务器读取后删除/修改该方法
      */
     public void initData() {
         NewsDao newsDao = getDaoSession().getNewsDao();

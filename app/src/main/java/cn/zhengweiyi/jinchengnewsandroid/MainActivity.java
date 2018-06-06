@@ -23,7 +23,6 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -53,8 +52,6 @@ public class MainActivity extends AppCompatActivity
         app.initData();
         // TODO 访问网络
         initViews();
-        /*初始化数据*/
-        //initData();
         /*设置Adapter*/
         TabFragment tabFragment = new TabFragment();
         fragmentList =new ArrayList<>();

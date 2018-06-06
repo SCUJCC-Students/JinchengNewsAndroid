@@ -2,7 +2,7 @@
  author 郑维一
 
  File：Category.java
- Description：News Class
+ Description：Category Class
  Site：www.zhengweiyi.cn
  */
 
@@ -23,9 +23,11 @@ public class Category {
         this.id = id;
         this.name = name;
     }
+
     @Generated(hash = 1150634039)
     public Category() {
     }
+
     public Long getId() {
         return this.id;
     }
