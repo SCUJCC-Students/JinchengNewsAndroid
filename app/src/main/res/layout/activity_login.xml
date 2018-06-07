@@ -10,13 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
-    <TextView
-        android:id="@+id/prompt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/prompt_title"
-        android:textColor="@color/colortext"
-        android:textSize="@dimen/text_size1"/>
+
 
     <!-- Login progress -->
     <ProgressBar
@@ -27,75 +21,94 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
-        android:id="@+id/login_form"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-        <LinearLayout
-            android:id="@+id/email_login_form"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ScrollView
+        android:id="@+id/login_form"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
+                android:id="@+id/email_login_form"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
-                <AutoCompleteTextView
-                    android:id="@+id/phone"
+                <TextView
+                    android:id="@+id/prompt_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_phone"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginBottom="@dimen/nav_header_spacing"
+                    android:gravity="center"
+                    android:text="@string/prompt_title"
+                    android:textColor="@color/colorBlackPrimary"
+                    android:textSize="@dimen/text_size1"/>
 
-            </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    <AutoCompleteTextView
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_phone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
-                <EditText
-                    android:id="@+id/verification_code"
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/verification_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/verification_code"
+                        android:imeActionId="6"
+                        android:imeActionLabel="@string/avoid_close_login"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/email_sign_in_button"
+                    style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/verification_code"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/avoid_close_login"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/prompt_login"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
 
-            </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:id="@+id/uesr_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/nav_header_spacing"
+                    android:text="@string/uesr_agreement" />
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorbackground"
-                android:text="@string/prompt_login"
-                android:textColor="@color/color1"
-                android:textStyle="bold"></Button>
+                <TextView
+                    android:id="@+id/account_registration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/account_registration" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/uesr_agreement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:lines="3"
-                android:text="@string/uesr_agreement" />
+        </ScrollView>
 
-            <TextView
-                android:id="@+id/account_registration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/account_registration" />
-        </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
 </LinearLayout>
