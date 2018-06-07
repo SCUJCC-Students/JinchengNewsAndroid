@@ -122,5 +122,7 @@
     <string name="account_registration">账号注册 | 密码登录</string>
     <string name="prompt_title">登录锦城头条，了解你的身边事</string>
     <string name="password_to_login">密码登录</string>
-    <string name="title_activity_login_two3">请输入密码</string>
+    <string name="entry_password">请输入密码</string>
+    <string name="title_activity_login_password">Sign in</string>
+
 </resources>

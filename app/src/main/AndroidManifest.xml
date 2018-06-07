@@ -33,8 +33,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".LoginTwoActivity2"
-            android:label="@string/title_activity_login_two2"></activity>
+            android:name=".LoginPasswordActivity"
+            android:label="@string/password_to_login"></activity>
     </application>
 
 </manifest>
