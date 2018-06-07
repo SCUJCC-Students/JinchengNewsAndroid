@@ -13,6 +13,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="tab_height">36dp</dimen>
     <dimen name="news_text_title_size">18sp</dimen>
+    <dimen name="news_text_title_size_big">24sp</dimen>
     <dimen name="news_text_description_size">12sp</dimen>
     <dimen name="list_padding">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>

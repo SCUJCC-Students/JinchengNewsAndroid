@@ -8,10 +8,24 @@
     tools:context=".ScrollingContentActivity"
     tools:showIn="@layout/activity_scrolling_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlackPrimary"
+            android:textSize="@dimen/news_text_title_size"
+            android:text="@string/news_title" />
+
+        <TextView
+            android:id="@+id/newsContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

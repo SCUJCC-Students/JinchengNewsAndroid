@@ -83,6 +83,8 @@ public class TabFragment extends Fragment implements AdapterView.OnItemClickList
             contentActivity. actionStart(getActivity(), news.getTitle(), news.getContent());
         }
         */
-        contentActivity.actionStart(getActivity(), news.getTitle(), news.getContent());
+        int views = news.getViews() + 1;
+        news.setViews(views);
+        ScrollingContentActivity.actionStart(getActivity(), news.getTitle(), news.getContent(), news.getAuthor(), news.getViews(), news.getCategoryId());
     }
 }
