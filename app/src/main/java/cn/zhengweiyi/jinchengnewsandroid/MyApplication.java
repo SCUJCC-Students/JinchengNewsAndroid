@@ -101,5 +101,4 @@ public class MyApplication extends Application {
         categoryDao.saveInTx(categoryList);
         newsDao.saveInTx(newsList);
     }
-
 }
