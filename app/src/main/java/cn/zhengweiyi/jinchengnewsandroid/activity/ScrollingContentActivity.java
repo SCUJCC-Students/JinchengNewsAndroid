@@ -1,4 +1,4 @@
-package cn.zhengweiyi.jinchengnewsandroid;
+package cn.zhengweiyi.jinchengnewsandroid.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import cn.zhengweiyi.jinchengnewsandroid.R;
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
 
 public class ScrollingContentActivity extends AppCompatActivity {

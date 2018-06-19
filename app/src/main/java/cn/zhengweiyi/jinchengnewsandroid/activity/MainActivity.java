@@ -6,7 +6,7 @@
  Site：www.zhengweiyi.cn
  */
 
-package cn.zhengweiyi.jinchengnewsandroid;
+package cn.zhengweiyi.jinchengnewsandroid.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -23,6 +23,13 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.zhengweiyi.jinchengnewsandroid.MyApplication;
+import cn.zhengweiyi.jinchengnewsandroid.R;
+import cn.zhengweiyi.jinchengnewsandroid.TabAdapter;
+import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment;
+import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment2;
+import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment3;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

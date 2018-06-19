@@ -22,7 +22,7 @@
         android:fullBackupContent="@xml/backup_descriptor"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,14 +32,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ScrollingContentActivity"
+            android:name=".activity.ScrollingContentActivity"
             android:label="@string/title_activity_scrolling_content"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".LoginPasswordActivity"
+            android:name=".activity.LoginPasswordActivity"
             android:label="@string/password_to_login" />
     </application>
 

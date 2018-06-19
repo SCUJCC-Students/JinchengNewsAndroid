@@ -6,7 +6,7 @@
  Site：www.zhengweiyi.cn
  */
 
-package cn.zhengweiyi.jinchengnewsandroid;
+package cn.zhengweiyi.jinchengnewsandroid.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,9 +17,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.MyApplication;
+import cn.zhengweiyi.jinchengnewsandroid.R;
+import cn.zhengweiyi.jinchengnewsandroid.activity.ScrollingContentActivity;
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
 import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 

@@ -6,7 +6,7 @@
  Site：www.zhengweiyi.cn
  */
 
-package cn.zhengweiyi.jinchengnewsandroid;
+package cn.zhengweiyi.jinchengnewsandroid.fragment;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.R;
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
 
 public class NewsListAdapter extends ArrayAdapter<News> {

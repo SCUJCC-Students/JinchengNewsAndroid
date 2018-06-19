@@ -1,13 +1,12 @@
 /*
  author 郑维一
 
- File：TabFragment3.java
- Description：The Fragment for third Tab
+ File：TabFragment2.java
+ Description：The Fragment for second Tab
  Site：www.zhengweiyi.cn
  */
 
-package cn.zhengweiyi.jinchengnewsandroid;
-
+package cn.zhengweiyi.jinchengnewsandroid.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,9 +17,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import cn.zhengweiyi.jinchengnewsandroid.MyApplication;
+import cn.zhengweiyi.jinchengnewsandroid.R;
+import cn.zhengweiyi.jinchengnewsandroid.activity.ScrollingContentActivity;
 import cn.zhengweiyi.jinchengnewsandroid.object.News;
 import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
@@ -28,7 +29,7 @@ import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment3 extends Fragment implements AdapterView.OnItemClickListener {
+public class TabFragment2 extends Fragment implements AdapterView.OnItemClickListener {
     private List<News> newsList;
     private NewsListAdapter adapter;
     // private boolean isTwoPane;
@@ -41,7 +42,7 @@ public class TabFragment3 extends Fragment implements AdapterView.OnItemClickLis
         MyApplication app = (MyApplication) getActivity().getApplication();
         //读取新闻
         NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
-        newsList = newsLab.getNewsByCat(2L);
+        newsList = newsLab.getNewsByCat(1L);
         //显示新闻列表
         adapter = new NewsListAdapter(activity, R.layout.news_title_item_pic_1, newsList);
     }
@@ -50,8 +51,8 @@ public class TabFragment3 extends Fragment implements AdapterView.OnItemClickLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        View view = inflater.inflate(R.layout.fragment_tab_fragment3, container, false);
-        ListView newsTitleListView = view.findViewById(R.id.tab_fragment3_list_view);
+        View view = inflater.inflate(R.layout.fragment_tab_fragment2, container, false);
+        ListView newsTitleListView = view.findViewById(R.id.tab_fragment2_list_view);
         newsTitleListView.setAdapter(adapter);
         newsTitleListView.setOnItemClickListener(this);
         return view;
