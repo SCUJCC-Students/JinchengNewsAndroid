@@ -33,11 +33,12 @@ public class NewsDao extends AbstractDao<News, Long> {
         public final static Property Title = new Property(1, String.class, "title", false, "TITLE");
         public final static Property Content = new Property(2, String.class, "content", false, "CONTENT");
         public final static Property Author = new Property(3, String.class, "author", false, "AUTHOR");
-        public final static Property ReleaseTime = new Property(4, java.util.Date.class, "releaseTime", false, "RELEASE_TIME");
-        public final static Property UpdataTime = new Property(5, java.util.Date.class, "updataTime", false, "UPDATA_TIME");
-        public final static Property Keywords = new Property(6, String.class, "keywords", false, "KEYWORDS");
-        public final static Property CategoryId = new Property(7, Long.class, "categoryId", false, "CATEGORY_ID");
-        public final static Property Views = new Property(8, int.class, "views", false, "VIEWS");
+        public final static Property Images = new Property(4, int.class, "images", false, "IMAGES");
+        public final static Property ReleaseTime = new Property(5, java.util.Date.class, "releaseTime", false, "RELEASE_TIME");
+        public final static Property UpdataTime = new Property(6, java.util.Date.class, "updataTime", false, "UPDATA_TIME");
+        public final static Property Keywords = new Property(7, String.class, "keywords", false, "KEYWORDS");
+        public final static Property CategoryId = new Property(8, Long.class, "categoryId", false, "CATEGORY_ID");
+        public final static Property Views = new Property(9, int.class, "views", false, "VIEWS");
     }
 
     private DaoSession daoSession;
@@ -60,11 +61,12 @@ public class NewsDao extends AbstractDao<News, Long> {
                 "\"TITLE\" TEXT," + // 1: title
                 "\"CONTENT\" TEXT," + // 2: content
                 "\"AUTHOR\" TEXT," + // 3: author
-                "\"RELEASE_TIME\" INTEGER," + // 4: releaseTime
-                "\"UPDATA_TIME\" INTEGER," + // 5: updataTime
-                "\"KEYWORDS\" TEXT," + // 6: keywords
-                "\"CATEGORY_ID\" INTEGER," + // 7: categoryId
-                "\"VIEWS\" INTEGER NOT NULL );"); // 8: views
+                "\"IMAGES\" INTEGER NOT NULL ," + // 4: images
+                "\"RELEASE_TIME\" INTEGER," + // 5: releaseTime
+                "\"UPDATA_TIME\" INTEGER," + // 6: updataTime
+                "\"KEYWORDS\" TEXT," + // 7: keywords
+                "\"CATEGORY_ID\" INTEGER," + // 8: categoryId
+                "\"VIEWS\" INTEGER NOT NULL );"); // 9: views
     }
 
     /** Drops the underlying database table. */
@@ -96,27 +98,28 @@ public class NewsDao extends AbstractDao<News, Long> {
         if (author != null) {
             stmt.bindString(4, author);
         }
+        stmt.bindLong(5, entity.getImages());
  
         java.util.Date releaseTime = entity.getReleaseTime();
         if (releaseTime != null) {
-            stmt.bindLong(5, releaseTime.getTime());
+            stmt.bindLong(6, releaseTime.getTime());
         }
  
         java.util.Date updataTime = entity.getUpdataTime();
         if (updataTime != null) {
-            stmt.bindLong(6, updataTime.getTime());
+            stmt.bindLong(7, updataTime.getTime());
         }
  
         String keywords = entity.getKeywords();
         if (keywords != null) {
-            stmt.bindString(7, keywords);
+            stmt.bindString(8, keywords);
         }
  
         Long categoryId = entity.getCategoryId();
         if (categoryId != null) {
-            stmt.bindLong(8, categoryId);
+            stmt.bindLong(9, categoryId);
         }
-        stmt.bindLong(9, entity.getViews());
+        stmt.bindLong(10, entity.getViews());
     }
 
     @Override
@@ -142,27 +145,28 @@ public class NewsDao extends AbstractDao<News, Long> {
         if (author != null) {
             stmt.bindString(4, author);
         }
+        stmt.bindLong(5, entity.getImages());
  
         java.util.Date releaseTime = entity.getReleaseTime();
         if (releaseTime != null) {
-            stmt.bindLong(5, releaseTime.getTime());
+            stmt.bindLong(6, releaseTime.getTime());
         }
  
         java.util.Date updataTime = entity.getUpdataTime();
         if (updataTime != null) {
-            stmt.bindLong(6, updataTime.getTime());
+            stmt.bindLong(7, updataTime.getTime());
         }
  
         String keywords = entity.getKeywords();
         if (keywords != null) {
-            stmt.bindString(7, keywords);
+            stmt.bindString(8, keywords);
         }
  
         Long categoryId = entity.getCategoryId();
         if (categoryId != null) {
-            stmt.bindLong(8, categoryId);
+            stmt.bindLong(9, categoryId);
         }
-        stmt.bindLong(9, entity.getViews());
+        stmt.bindLong(10, entity.getViews());
     }
 
     @Override
@@ -183,11 +187,12 @@ public class NewsDao extends AbstractDao<News, Long> {
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // title
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // content
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // author
-            cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)), // releaseTime
-            cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)), // updataTime
-            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // keywords
-            cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7), // categoryId
-            cursor.getInt(offset + 8) // views
+            cursor.getInt(offset + 4), // images
+            cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)), // releaseTime
+            cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)), // updataTime
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // keywords
+            cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8), // categoryId
+            cursor.getInt(offset + 9) // views
         );
         return entity;
     }
@@ -198,11 +203,12 @@ public class NewsDao extends AbstractDao<News, Long> {
         entity.setTitle(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setContent(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setAuthor(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setReleaseTime(cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)));
-        entity.setUpdataTime(cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)));
-        entity.setKeywords(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
-        entity.setCategoryId(cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7));
-        entity.setViews(cursor.getInt(offset + 8));
+        entity.setImages(cursor.getInt(offset + 4));
+        entity.setReleaseTime(cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)));
+        entity.setUpdataTime(cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)));
+        entity.setKeywords(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
+        entity.setCategoryId(cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8));
+        entity.setViews(cursor.getInt(offset + 9));
      }
     
     @Override

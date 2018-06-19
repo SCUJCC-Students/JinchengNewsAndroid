@@ -8,6 +8,8 @@
 
 package cn.zhengweiyi.jinchengnewsandroid.object;
 
+import android.net.Uri;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.JoinProperty;
@@ -30,6 +32,7 @@ public class News {
     private String title;       //标题
     private String content;     //内容
     private String author;      //作者
+    private int images;       //图片
     private Date releaseTime;   //新闻发布时间
     private Date updataTime;    //新闻更新时间
     private String keywords;    //关键词
@@ -37,7 +40,6 @@ public class News {
     @ToOne(joinProperty = "categoryId")
     private Category category;  //关系表
     private int views;          //浏览量
-
     /** Used to resolve relations */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
@@ -47,14 +49,15 @@ public class News {
     @Generated(hash = 1372501278)
     private transient Long category__resolvedKey;
 
-    
+
     @Keep
-    public News(String title, String content, String author,
-                 Date releaseTime, Date updataTime, String keywords, Long categoryId,
-                 int views) {
+    public News(String title, String content, String author, int images,
+                Date releaseTime, Date updataTime, String keywords, Long categoryId,
+                int views) {
         this.title = title;
         this.content = content;
         this.author = author;
+        this.images = images;
         this.releaseTime = releaseTime;
         this.updataTime = updataTime;
         this.keywords = keywords;
@@ -63,13 +66,14 @@ public class News {
     }
 
 
-    @Generated(hash = 957156200)
-    public News(Long id, String title, String content, String author, Date releaseTime,
-            Date updataTime, String keywords, Long categoryId, int views) {
+    @Generated(hash = 929145596)
+    public News(Long id, String title, String content, String author, int images,
+            Date releaseTime, Date updataTime, String keywords, Long categoryId, int views) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
+        this.images = images;
         this.releaseTime = releaseTime;
         this.updataTime = updataTime;
         this.keywords = keywords;
@@ -120,6 +124,16 @@ public class News {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+
+    public Integer getImages() {
+        return this.images;
+    }
+
+
+    public void setImages(Integer images) {
+        this.images = images;
     }
 
 
@@ -251,4 +265,7 @@ public class News {
     }
 
 
+    public void setImages(int images) {
+        this.images = images;
+    }
 }

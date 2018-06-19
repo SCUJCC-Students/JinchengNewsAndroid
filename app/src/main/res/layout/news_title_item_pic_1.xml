@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorDefault">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
-        android:paddingStart="@dimen/list_padding"
-        android:paddingEnd="@dimen/list_padding"
-        android:orientation="vertical"
-        tools:ignore="RtlSymmetry">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    android:paddingStart="@dimen/list_padding"
+    android:paddingEnd="@dimen/list_padding"
+    android:orientation="vertical"
+    tools:ignore="RtlSymmetry">
 
         <RelativeLayout
             android:id="@+id/newsType1"
@@ -51,7 +44,7 @@
                 android:gravity="start"/>
 
             <TextView
-                android:id="@+id/newsReader"
+                android:id="@+id/newsViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -74,5 +67,3 @@
         </RelativeLayout>
 
     </LinearLayout>
-
-</android.support.v4.widget.NestedScrollView>

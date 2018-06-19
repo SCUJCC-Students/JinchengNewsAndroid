@@ -57,7 +57,7 @@ public class NewsListAdapter extends ArrayAdapter<News> {
             newAuthorText.setText(news.getAuthor());
 
             //设置新闻浏览量
-            TextView newViewsText = view.findViewById(R.id.newsReader);
+            TextView newViewsText = view.findViewById(R.id.newsViews);
             String t = String.format(context.getString(R.string.news_views), news.getViews());
             newViewsText.setText(t);
 
