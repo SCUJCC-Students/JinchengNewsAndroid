@@ -87,6 +87,6 @@ public class TabFragment2 extends Fragment implements AdapterView.OnItemClickLis
             contentActivity. actionStart(getActivity(), news.getTitle(), news.getContent());
         }
         */
-        contentActivity.actionStart(getActivity(), news.getTitle(), news.getContent());
+        ScrollingContentActivity.actionStart(getActivity(), news.getTitle(), news.getContent(), news.getAuthor(), news.getViews(), news.getCategoryId());
     }
 }
