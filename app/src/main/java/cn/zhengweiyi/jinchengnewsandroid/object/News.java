@@ -32,14 +32,15 @@ public class News {
     private String title;       //标题
     private String content;     //内容
     private String author;      //作者
-    private int images;       //图片
+    private int images;         //图片
     private Date releaseTime;   //新闻发布时间
-    private Date updataTime;    //新闻更新时间
+    private Date updateTime;    //新闻更新时间
     private String keywords;    //关键词
     private Long categoryId;    //新闻类别
     @ToOne(joinProperty = "categoryId")
     private Category category;  //关系表
     private int views;          //浏览量
+
     /** Used to resolve relations */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
@@ -49,33 +50,33 @@ public class News {
     @Generated(hash = 1372501278)
     private transient Long category__resolvedKey;
 
-
     @Keep
     public News(String title, String content, String author, int images,
-                Date releaseTime, Date updataTime, String keywords, Long categoryId,
+                Date releaseTime, Date updateTime, String keywords, Long categoryId,
                 int views) {
         this.title = title;
         this.content = content;
         this.author = author;
         this.images = images;
         this.releaseTime = releaseTime;
-        this.updataTime = updataTime;
+        this.updateTime = updateTime;
         this.keywords = keywords;
         this.categoryId = categoryId;
         this.views = views;
     }
 
 
-    @Generated(hash = 929145596)
+    @Generated(hash = 589358515)
     public News(Long id, String title, String content, String author, int images,
-            Date releaseTime, Date updataTime, String keywords, Long categoryId, int views) {
+            Date releaseTime, Date updateTime, String keywords, Long categoryId,
+            int views) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
         this.images = images;
         this.releaseTime = releaseTime;
-        this.updataTime = updataTime;
+        this.updateTime = updateTime;
         this.keywords = keywords;
         this.categoryId = categoryId;
         this.views = views;
@@ -127,12 +128,12 @@ public class News {
     }
 
 
-    public Integer getImages() {
+    public int getImages() {
         return this.images;
     }
 
 
-    public void setImages(Integer images) {
+    public void setImages(int images) {
         this.images = images;
     }
 
@@ -147,13 +148,13 @@ public class News {
     }
 
 
-    public Date getUpdataTime() {
-        return this.updataTime;
+    public Date getUpdateTime() {
+        return this.updateTime;
     }
 
 
-    public void setUpdataTime(Date updataTime) {
-        this.updataTime = updataTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
 
@@ -262,10 +263,5 @@ public class News {
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getNewsDao() : null;
-    }
-
-
-    public void setImages(int images) {
-        this.images = images;
     }
 }

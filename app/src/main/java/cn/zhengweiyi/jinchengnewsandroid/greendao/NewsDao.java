@@ -35,7 +35,7 @@ public class NewsDao extends AbstractDao<News, Long> {
         public final static Property Author = new Property(3, String.class, "author", false, "AUTHOR");
         public final static Property Images = new Property(4, int.class, "images", false, "IMAGES");
         public final static Property ReleaseTime = new Property(5, java.util.Date.class, "releaseTime", false, "RELEASE_TIME");
-        public final static Property UpdataTime = new Property(6, java.util.Date.class, "updataTime", false, "UPDATA_TIME");
+        public final static Property UpdateTime = new Property(6, java.util.Date.class, "updateTime", false, "UPDATE_TIME");
         public final static Property Keywords = new Property(7, String.class, "keywords", false, "KEYWORDS");
         public final static Property CategoryId = new Property(8, Long.class, "categoryId", false, "CATEGORY_ID");
         public final static Property Views = new Property(9, int.class, "views", false, "VIEWS");
@@ -63,7 +63,7 @@ public class NewsDao extends AbstractDao<News, Long> {
                 "\"AUTHOR\" TEXT," + // 3: author
                 "\"IMAGES\" INTEGER NOT NULL ," + // 4: images
                 "\"RELEASE_TIME\" INTEGER," + // 5: releaseTime
-                "\"UPDATA_TIME\" INTEGER," + // 6: updataTime
+                "\"UPDATE_TIME\" INTEGER," + // 6: updateTime
                 "\"KEYWORDS\" TEXT," + // 7: keywords
                 "\"CATEGORY_ID\" INTEGER," + // 8: categoryId
                 "\"VIEWS\" INTEGER NOT NULL );"); // 9: views
@@ -105,9 +105,9 @@ public class NewsDao extends AbstractDao<News, Long> {
             stmt.bindLong(6, releaseTime.getTime());
         }
  
-        java.util.Date updataTime = entity.getUpdataTime();
-        if (updataTime != null) {
-            stmt.bindLong(7, updataTime.getTime());
+        java.util.Date updateTime = entity.getUpdateTime();
+        if (updateTime != null) {
+            stmt.bindLong(7, updateTime.getTime());
         }
  
         String keywords = entity.getKeywords();
@@ -152,9 +152,9 @@ public class NewsDao extends AbstractDao<News, Long> {
             stmt.bindLong(6, releaseTime.getTime());
         }
  
-        java.util.Date updataTime = entity.getUpdataTime();
-        if (updataTime != null) {
-            stmt.bindLong(7, updataTime.getTime());
+        java.util.Date updateTime = entity.getUpdateTime();
+        if (updateTime != null) {
+            stmt.bindLong(7, updateTime.getTime());
         }
  
         String keywords = entity.getKeywords();
@@ -189,7 +189,7 @@ public class NewsDao extends AbstractDao<News, Long> {
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // author
             cursor.getInt(offset + 4), // images
             cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)), // releaseTime
-            cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)), // updataTime
+            cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)), // updateTime
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // keywords
             cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8), // categoryId
             cursor.getInt(offset + 9) // views
@@ -205,7 +205,7 @@ public class NewsDao extends AbstractDao<News, Long> {
         entity.setAuthor(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setImages(cursor.getInt(offset + 4));
         entity.setReleaseTime(cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)));
-        entity.setUpdataTime(cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)));
+        entity.setUpdateTime(cursor.isNull(offset + 6) ? null : new java.util.Date(cursor.getLong(offset + 6)));
         entity.setKeywords(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
         entity.setCategoryId(cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8));
         entity.setViews(cursor.getInt(offset + 9));

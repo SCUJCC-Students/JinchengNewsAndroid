@@ -11,21 +11,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/list_padding"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/newsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlackPrimary"
-            android:textSize="@dimen/news_text_title_size"
+            android:textSize="@dimen/news_text_title_size_content"
             android:text="@string/news_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/news_text_description_margin_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/newsAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/news_text_description_margin_content"
+                android:textSize="@dimen/news_text_description_size_content"
+                android:text="@string/news_author"/>
+
+            <TextView
+                android:id="@+id/newsTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/news_text_description_margin_content"
+                android:textSize="@dimen/news_text_description_size_content"
+                android:text="@string/news_release_time"
+                />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/newsContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text" />
+            android:text="@string/news_content" />
+
+        <TextView
+            android:id="@+id/newsViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/news_views"/>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

@@ -8,6 +8,39 @@
     <string name="news_author">作者/发布账号</string>
     <string name="news_views">%1$d阅读</string>
     <string name="news_pic_description">新闻图片</string>
+    <string name="news_release_time">发布时间</string>
+    <string name="news_update_time">发布时间</string>
+    <string name="news_content">"新闻内容是大量的丰富的文本，他们可以使用转义字符进行"
+
+        "换行\n\n"
+
+        "操作，也可以做一些其他事情\n\n"
+
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"</string>
+    <string name="news_keywords">关键词</string>
 
     <string name="username">用户名</string>
     <string name="user_signature">用户签名</string>
