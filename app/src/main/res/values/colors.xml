@@ -2,9 +2,10 @@
 <resources>
     <color name="colorPrimary">#C73530</color>
     <color name="colorPrimaryDark">#9A2925</color>
-    <color name="colorAccent">#C73530</color>
+    <color name="colorAccent">#CCC73530</color>
     <color name="colorDefault">#F2F2F2</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBlackPrimary">#333</color>
     <color name="colorBlackLight">#999</color>
+    <color name="colorLineRed">#119A2925</color>
 </resources>

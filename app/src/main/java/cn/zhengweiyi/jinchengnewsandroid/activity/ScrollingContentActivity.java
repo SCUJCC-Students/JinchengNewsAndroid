@@ -51,10 +51,6 @@ public class ScrollingContentActivity extends AppCompatActivity {
         });
     }
 
-    public static void actionStart(FragmentActivity activity, String title, String content, String author, int views, Long categoryId) {
-
-    }
-
     @SuppressLint("SimpleDateFormat")
     private void setNewsContent(Long id) {
         TextView newsTitle = findViewById(R.id.newsTitle);
@@ -78,6 +74,8 @@ public class ScrollingContentActivity extends AppCompatActivity {
             } else {
                 time = dateFormat.format(news.getUpdateTime());
             }
+            //增加阅读量
+            news.setViews(news.getViews() + 1);
             //获取阅读量字符串
             String views = String.format(getApplicationContext().getString(R.string.news_views), news.getViews());
 
@@ -86,8 +84,9 @@ public class ScrollingContentActivity extends AppCompatActivity {
             newsAuthor.setText(news.getAuthor());
             newsTime.setText(time);
             newsContent.setText(news.getContent());
+            toolbarLayout.setBackgroundResource(news.getImages());
             newsViews.setText(views);
-            news.setViews(news.getViews() + 1);
+            news.update();
         }
     }
 }

@@ -30,6 +30,7 @@ import cn.zhengweiyi.jinchengnewsandroid.TabAdapter;
 import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment;
 import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment2;
 import cn.zhengweiyi.jinchengnewsandroid.fragment.TabFragment3;
+import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -54,9 +55,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*初始化界面*/
+        /*初始化数据*/
         MyApplication app = (MyApplication) getApplication();
-        app.initData();
+        NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
+        if (newsLab.getNewsById(1L) == null) {
+            app.initData();
+        }
         // TODO 访问网络
         initViews();
         /*设置Adapter*/
@@ -112,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) {
             return true;
         }
 
@@ -130,11 +134,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_news) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_video) {
 
         } else if (id == R.id.nav_manage) {
 

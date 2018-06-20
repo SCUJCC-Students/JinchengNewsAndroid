@@ -4,14 +4,6 @@
     android:id="@+id/recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
-
-    <!--<ListView
-        android:id="@+id/tab_fragment_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@drawable/list_divider_line"
-        android:dividerHeight="1dp">
-    </ListView>-->
+    android:background="@color/colorLineRed">
 
 </android.support.v7.widget.RecyclerView>

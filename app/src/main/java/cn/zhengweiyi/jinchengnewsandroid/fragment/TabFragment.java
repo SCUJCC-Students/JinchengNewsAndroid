@@ -27,9 +27,14 @@ import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 public class TabFragment extends Fragment {
     private List<News> newsList;
-    //private NewsAdapter adapter;
-    // private boolean isTwoPane;
 
+    /**
+     * 从数据库中读取数据，调用NewsAdapter加载item
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return item View
+     */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

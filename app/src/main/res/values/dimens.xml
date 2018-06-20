@@ -11,12 +11,14 @@
     <dimen name="nav_header_image_size">72dp</dimen>
 
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_size">36dp</dimen>
     <dimen name="tab_height">36dp</dimen>
     <dimen name="news_text_title_size">18sp</dimen>
-    <dimen name="news_text_title_size_content">24sp</dimen>
+    <dimen name="news_text_title_size_content">20sp</dimen>
     <dimen name="news_text_description_size">12sp</dimen>
-    <dimen name="news_text_description_size_content">16sp</dimen>
+    <dimen name="news_text_description_size_content">12sp</dimen>
     <dimen name="news_text_description_margin_content">8dp</dimen>
+    <dimen name="news_text_content_size">16sp</dimen>
     <dimen name="list_padding">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
