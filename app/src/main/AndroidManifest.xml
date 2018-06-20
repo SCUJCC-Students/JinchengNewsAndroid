@@ -41,6 +41,7 @@
         <activity
             android:name=".activity.LoginPasswordActivity"
             android:label="@string/password_to_login" />
+        <activity android:name=".activity.SearchActivity"></activity>
     </application>
 
 </manifest>

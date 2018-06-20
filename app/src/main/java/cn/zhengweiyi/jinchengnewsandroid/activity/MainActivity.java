@@ -8,6 +8,7 @@
 
 package cn.zhengweiyi.jinchengnewsandroid.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -117,6 +118,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
+            Intent intent = new Intent(this,SearchActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_video) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_setting) {
 
         } else if (id == R.id.nav_share) {
 

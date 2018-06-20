@@ -36,6 +36,9 @@
     <string name="menu_send">发送</string>
     <string name="menu_setting">设置</string>
 
+    <string name="search_text_hint">点击搜索</string>
+
+
     <string name="title_activity_scrolling_content">新闻详情</string>
     <string name="title_activity_content1">登录锦城头条，了解你的身边事</string>
 

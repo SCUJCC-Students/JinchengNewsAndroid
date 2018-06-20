@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDefault"
     tools:context=".activity.SearchActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <scut.carson_ho.searchview.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:textSizeSearch="@dimen/search_text_size"
+        app:textColorSearch="@color/colorBlackLight"
+        app:textHintSearch="@string/search_text_hint"
+        app:searchBlockHeight="@dimen/search_block_height"
+        app:searchBlockColor="@color/colorWhite">
+
+    </scut.carson_ho.searchview.SearchView>
+
+
+</LinearLayout>
