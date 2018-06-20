@@ -138,11 +138,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_news) {
-            // Handle the camera action
+            //Intent intent = new Intent(this, MainActivity.class);
+            //startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(this, ImageActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_video) {
-
+            Intent intent = new Intent(this, VideoActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_setting) {
 
         } else if (id == R.id.nav_share) {

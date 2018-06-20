@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">锦城头条</string>
+    <string name="title_activity_image">图片</string>
+    <string name="title_activity_video">视频</string>
 
     <string name="navigation_drawer_open">打开 navigation drawer</string>
     <string name="navigation_drawer_close">关闭 navigation drawer</string>
