@@ -3,14 +3,16 @@
 
 ## 技术环境
 * IDE：Android Studio 3.1.3
-* Gradle：gradle-4.4-all.zip
+* Gradle：4.4
 * Android API: 20~27 (Android 4.4w ~ Android 8.1)
 
 ## 关键点
 * Fragment
 * TabLayout + ViewPager
+* RecycleView
 * [GreenDAO](https://github.com/greenrobot/greenDAO)
 * [OkHttp](https://github.com/square/okhttp)
+* [SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)
 
 ## 来找我呀
 个人网站：<http://www.zhengweiyi.cn>  

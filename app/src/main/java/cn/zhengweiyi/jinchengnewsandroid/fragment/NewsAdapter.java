@@ -85,4 +85,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
         return mNewsList.size();
     }
 
+    /**
+     * 刷新新闻列表时，传入新的新闻
+     * @param newsList 设置Adapter的mNewsList
+     */
+    public void refresh(List<News> newsList) {
+        mNewsList = newsList;
+    }
+
 }

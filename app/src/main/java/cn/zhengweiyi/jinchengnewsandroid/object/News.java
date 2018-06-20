@@ -2,27 +2,22 @@
  author 郑维一
 
  File：News.java
- Description：News Class
+ Description：News Class 新闻实例类
  Site：www.zhengweiyi.cn
  */
 
 package cn.zhengweiyi.jinchengnewsandroid.object;
 
-import android.net.Uri;
-
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.JoinProperty;
 import org.greenrobot.greendao.annotation.Keep;
 import org.greenrobot.greendao.annotation.ToOne;
 
-import java.lang.reflect.Array;
 import java.util.Date;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
 import cn.zhengweiyi.jinchengnewsandroid.greendao.DaoSession;
 import cn.zhengweiyi.jinchengnewsandroid.greendao.CategoryDao;
-import org.greenrobot.greendao.annotation.NotNull;
 import cn.zhengweiyi.jinchengnewsandroid.greendao.NewsDao;
 
 @Entity

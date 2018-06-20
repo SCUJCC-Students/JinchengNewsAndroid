@@ -18,6 +18,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -30,6 +34,7 @@ import cn.zhengweiyi.jinchengnewsandroid.object.NewsLab;
 
 public class TabFragment3 extends Fragment {
     private List<News> newsList;
+    Long categoryId = 2L;
 
     /**
      * 从数据库中读取数据，调用NewsAdapter加载item
@@ -46,14 +51,35 @@ public class TabFragment3 extends Fragment {
         //获取Application
         MyApplication app = (MyApplication) Objects.requireNonNull(getActivity()).getApplication();
         //读取新闻列表
-        NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
-        newsList = newsLab.getNewsByCat(2L);
+        final NewsLab newsLab = new NewsLab(app.getDaoSession().getNewsDao());
+        newsList = newsLab.getNewsByCat(categoryId);
         //显示新闻列表
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        NewsAdapter adapter = new NewsAdapter(newsList);
+        final NewsAdapter adapter = new NewsAdapter(newsList);
         recyclerView.setAdapter(adapter);
+
+        //获取下拉刷新和上拉加载的layout
+        RefreshLayout refreshLayout = view.findViewById(R.id.refreshLayout);
+
+        //下拉刷新
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshlayout) {
+                newsList = newsLab.getNewsByCat(categoryId);
+                adapter.refresh(newsList);
+                adapter.notifyDataSetChanged();
+                refreshlayout.finishRefresh(1000/*,false*/);//传入false表示刷新失败
+            }
+        });
+        //上拉加载
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadMore(1000/*,false*/);//传入false表示加载失败
+            }
+        });
 
         return view;
     }

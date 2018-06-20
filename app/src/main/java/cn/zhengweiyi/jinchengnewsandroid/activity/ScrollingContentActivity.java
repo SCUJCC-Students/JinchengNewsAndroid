@@ -58,6 +58,7 @@ public class ScrollingContentActivity extends AppCompatActivity {
         TextView newsTime = findViewById(R.id.newsTime);
         TextView newsContent = findViewById(R.id.newsContent);
         TextView newsViews = findViewById(R.id.newsViews);
+        View toolbarLayout = findViewById(R.id.toolbar_layout);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分");
         String time;    //发布/更新时间
 
