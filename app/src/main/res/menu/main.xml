@@ -8,6 +8,6 @@
         android:id="@+id/action_search"
         android:icon="@drawable/ic_search"
         android:title="@string/action_search"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 
 </menu>

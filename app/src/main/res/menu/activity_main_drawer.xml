@@ -7,31 +7,31 @@
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_news_solid"
-            android:title="新闻" />
+            android:title="@string/menu_news" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="图片新闻" />
+            android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_video"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="视频新闻" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="社交" />
+            android:title="@string/menu_video" />
     </group>
 
-    <item android:title="社交">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="分享" />
+                android:title="@string/menu_share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="发送" />
+                android:title="@string/menu_send" />
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_setting" />
         </menu>
     </item>
 
