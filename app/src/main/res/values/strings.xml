@@ -30,11 +30,12 @@
     <string name="action_search">搜索</string>
 
     <string name="menu_news">新闻</string>
-    <string name="menu_gallery">美图</string>
+    <string name="menu_gallery">图片</string>
     <string name="menu_video">视频</string>
     <string name="menu_share">分享</string>
     <string name="menu_send">发送</string>
     <string name="menu_setting">设置</string>
+    <string name="menu_title">其它</string>
 
     <string name="search_text_hint">点击搜索</string>
 

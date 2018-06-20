@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.greenrobot:greendao:3.2.2'// add GreenDAO library
     implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'// GreenDAO 加密库
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'//OK HTTP
+    implementation 'com.carson_ho:SearchLayout:1.0.1'//SearchLayout
 
     //SmartRefreshLayout 下拉刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-7'

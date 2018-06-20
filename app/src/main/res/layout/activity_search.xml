@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDefault"
-    tools:context=".activity.SearchActivity">
+    android:background="@color/colorDefault">
 
-    <scut.carson_ho.searchview.SearchView
+    <android.support.v7.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +15,7 @@
         app:searchBlockHeight="@dimen/search_block_height"
         app:searchBlockColor="@color/colorWhite">
 
-    </scut.carson_ho.searchview.SearchView>
+    </android.support.v7.widget.SearchView>
 
 
 </LinearLayout>
