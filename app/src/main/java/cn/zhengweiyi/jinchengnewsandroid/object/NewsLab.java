@@ -42,7 +42,12 @@ public class NewsLab {
      * @param Id 新闻ID
      * @return 返回新闻数据
      */
-    public List<News> getNewsById(Long Id) {
+    public List<News> getNewsByNewsId(Long Id) {
         return newsDao.queryBuilder().where(NewsDao.Properties.Id.eq(Id)).list();
+    }
+
+    public News getNewsById(Long Id) {
+        News news = newsDao.queryBuilder().where(NewsDao.Properties.Id.eq(Id)).unique();
+        return news;
     }
 }

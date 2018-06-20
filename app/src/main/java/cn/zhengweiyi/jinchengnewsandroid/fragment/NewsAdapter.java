@@ -56,25 +56,28 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_title_item_pic_1, parent, false);
         final ViewHolder holder = new ViewHolder(view);
-        holder.newsView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, ScrollingContentActivity.class);
-                context.startActivity(intent);
-            }
-        });
+
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        News news = mNewsList.get(position);
+        final News news = mNewsList.get(position);
         String t = String.format(holder.context.getString(R.string.news_views), news.getViews());
         holder.newsTitle.setText(news.getTitle());
         holder.newsAuthor.setText(news.getAuthor());
         holder.newsViews.setText(t);
         holder.newsImage.setImageResource(news.getImages());
+        holder.newsView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Long id = news.getId();
+                Intent intent = new Intent(context, ScrollingContentActivity.class);
+                intent.putExtra("newsId", id);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
